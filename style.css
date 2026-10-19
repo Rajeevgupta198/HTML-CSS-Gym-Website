@@ -1,83 +1,10 @@
-*{
-    margin: 0px;
-    padding: 0px;
+
+/* ===== Reset CSS ===== */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-image: url('./bg.jpg');
-    background-size: 100%;
-    color: white;
-}
-nav{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-nav h1{
-    font-size: 50px;
-}
-ul button{
-    width: 100px;
-    height: 34px;
-    background-color: red;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-}
-nav ul{
-    display: flex;
-    list-style: none;
-    
-}
-span{
-    color: red;
-}
-nav ul li a{
-    margin: 30px;
-    font-size: 25px;
-    text-decoration: none;
-    color: white;
-}
-.text{
-    margin-left:75px;
-    margin-top: 40px;
-}
-.text h1{
-    font-size: 100px;
-    margin-top: 90px;
-}
-.text p{
-    font-size: 20px;
-    
-}
-#join-button{
-    width: 170px;
-    height: 44px;
-    background-color: rgb(241, 35, 35);
-    color: white;
-    border: none;
-    font-size: 25px;
-    margin-top: 50px;
-    border-radius: 50px;
-}
-
-#join-button:hover{
-    border: 3px solid white;
-    background-color: rgb(230, 44, 44);
-    color: aqua;
-}
-
-nav ul li a:hover{
-    border-bottom: 3px solid rgb(29, 29, 217);
-    border-radius: 5px;
-}
-
-
-
-
-
-/* Responsive Fix - Add at the end of style.css */
 
 html {
     scroll-behavior: smooth;
@@ -85,9 +12,13 @@ html {
 
 body {
     min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: url('./bg.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
+    background-color: #111;
     overflow-x: hidden;
 }
 
@@ -95,19 +26,23 @@ section {
     min-height: 100vh;
 }
 
+/* ===== Navbar ===== */
 nav {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 25px 6%;
     gap: 20px;
-    padding: 0 6%;
-    margin-top: 0;
-    padding-top: 25px;
 }
 
 nav h1 {
-    font-size: clamp(28px, 3.5vw, 50px);
+    font-size: clamp(30px, 4vw, 50px);
     white-space: nowrap;
+}
+
+span {
+    color: red;
 }
 
 nav ul {
@@ -115,113 +50,164 @@ nav ul {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    list-style: none;
     gap: 12px;
 }
 
 nav ul li a {
     display: inline-block;
-    margin: 8px 12px;
-    font-size: clamp(16px, 1.8vw, 25px);
+    margin: 8px;
+    font-size: clamp(15px, 1.8vw, 22px);
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    border-bottom: 3px solid blue;
+    padding-bottom: 5px;
+}
+
+nav ul button {
+    min-width: 100px;
+    min-height: 38px;
+    padding: 8px 12px;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Main Content ===== */
+.container {
+    width: 100%;
 }
 
 .text {
-    margin-left: 6%;
-    margin-right: 5%;
-    margin-top: 40px;
+    margin: 70px 0 0 7%;
+    max-width: 850px;
 }
 
 .text h1 {
-    font-size: clamp(36px, 6vw, 100px);
+    font-size: clamp(40px, 7vw, 100px);
     line-height: 1.1;
+    margin-bottom: 20px;
     overflow-wrap: break-word;
 }
 
 .text p {
     max-width: 700px;
-    font-size: clamp(14px, 1.5vw, 20px);
-    line-height: 1.5;
+    font-size: clamp(15px, 1.8vw, 20px);
+    line-height: 1.6;
 }
 
 #join-button {
-    max-width: 100%;
+    width: 170px;
+    min-height: 44px;
+    background-color: rgb(241, 35, 35);
+    color: white;
+    border: none;
+    font-size: 22px;
+    margin-top: 35px;
+    border-radius: 50px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Tablet */
+#join-button:hover {
+    border: 2px solid white;
+    background-color: rgb(230, 44, 44);
+    color: aqua;
+}
+
+/* ===== Tablet ===== */
 @media (max-width: 992px) {
     nav {
         flex-direction: column;
         gap: 15px;
-        padding: 20px 4%;
+        padding: 22px 4%;
     }
 
     nav ul {
-        gap: 8px;
+        gap: 10px;
     }
 
     nav ul li a {
-        margin: 8px;
+        margin: 6px;
+        font-size: 18px;
     }
 
     .text {
-        margin: 30px 5%;
+        margin: 55px 5% 0;
     }
 
     .text h1 {
-        margin-top: 50px;
+        font-size: clamp(45px, 8vw, 75px);
     }
 }
 
-/* Mobile */
+/* ===== Mobile ===== */
 @media (max-width: 768px) {
     body {
-        background-image:
-            linear-gradient(
-                rgba(0, 0, 0, 0.45),
-                rgba(0, 0, 0, 0.75)
-            ),
-            url('./bg.jpg');
         background-size: cover;
-        background-position: 62% center;
+        background-position: center;
         background-attachment: scroll;
     }
 
+    section {
+        min-height: 100vh;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)
+        );
+    }
+
     nav {
-        padding: 18px 12px;
+        padding: 20px 12px;
+        gap: 18px;
     }
 
     nav h1 {
-        font-size: 35px;
+        font-size: 34px;
     }
 
     nav ul {
         width: 100%;
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
     }
 
     nav ul li a {
-        font-size: 18px;
-        margin: 5px;
+        font-size: 17px;
+        margin: 0;
+        padding: 5px;
     }
 
-    ul button {
-        margin-top: 8px;
+    nav ul button {
+        margin-top: 5px;
     }
 
     .text {
+        margin: 30px 16px 50px;
         text-align: center;
-        margin: 20px 16px 40px;
     }
 
     .text h1 {
-        font-size: clamp(34px, 9vw, 55px);
-        margin-top: 45px;
+        font-size: clamp(36px, 9vw, 55px);
+        margin-top: 35px;
+        margin-bottom: 18px;
     }
 
     .text p {
         font-size: 16px;
-        max-width: 100%;
+        line-height: 1.6;
     }
 
     .text p br {
@@ -230,14 +216,18 @@ nav ul li a {
 
     #join-button {
         width: 145px;
-        height: 42px;
+        min-height: 42px;
         font-size: 20px;
-        margin-top: 30px;
+        margin-top: 28px;
     }
 }
 
-/* Small mobile */
+/* ===== Small Mobile ===== */
 @media (max-width: 480px) {
+    nav {
+        padding: 18px 10px;
+    }
+
     nav h1 {
         font-size: 30px;
     }
@@ -247,12 +237,11 @@ nav ul li a {
     }
 
     .text {
-        margin-left: 12px;
-        margin-right: 12px;
+        margin: 25px 12px 40px;
     }
 
     .text h1 {
-        font-size: 34px;
+        font-size: 35px;
     }
 
     .text p {
@@ -261,7 +250,7 @@ nav ul li a {
 
     #join-button {
         width: 130px;
-        height: 40px;
+        min-height: 40px;
         font-size: 18px;
     }
 }
